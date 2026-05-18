@@ -36,9 +36,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[Video Walkthrough](https://www.loom.com/share/273e6a1bae1e4b9087a27c3aec2ee156)
 
-GIF created with [ScreenToGif](https://www.screentogif.com/)
+Video created with [Loom](https://www.loom.com)
 
 ## Notes
 
