@@ -21,12 +21,14 @@ function EditCreator() {
 
   async function handleUpdate(e) {
     e.preventDefault()
-    await supabase.from('creators').update(form).eq('id', id)
+    const { name, url, description, imageURL } = form
+    await supabase.from('creators').update({ name, url, description, imageURL }).eq('id', Number(id))
     navigate('/')
   }
 
   async function handleDelete() {
-    await supabase.from('creators').delete().eq('id', id)
+    const { error } = await supabase.from('creators').delete().eq('id', Number(id))
+    if (error) { console.error('Delete error:', error); return }
     navigate('/')
   }
 

@@ -9,7 +9,7 @@ function ViewCreator() {
 
   useEffect(() => {
     async function fetchCreator() {
-      const { data } = await supabase.from('creators').select().eq('id', id).single()
+      const { data } = await supabase.from('creators').select().eq('id', Number(id)).single()
       if (data) setCreator(data)
     }
     fetchCreator()
