@@ -16,20 +16,36 @@ function ShowCreators() {
   }, [])
 
   return (
-    <div className="container">
-      <div className="header">
-        <h1>Creatorverse</h1>
-        <button onClick={() => navigate('/add')}>+ Add Creator</button>
-      </div>
-      {creators.length === 0 ? (
-        <p>No creators yet. Add some!</p>
-      ) : (
-        <div className="grid">
-          {creators.map((c) => (
-            <Card key={c.id} creator={c} />
-          ))}
+    <div>
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">Creatorverse</h1>
+          <p className="hero-subtitle">
+            Discover and share the creators that inspire you — streamers, artists, educators, and more.
+          </p>
+          <button className="hero-btn" onClick={() => navigate('/add')}>
+            + Add a Creator
+          </button>
         </div>
-      )}
+      </div>
+
+      <div className="container">
+        {creators.length === 0 ? (
+          <div className="empty-state">
+            <p>No creators yet.</p>
+            <span>Hit the button above to add your first one!</span>
+          </div>
+        ) : (
+          <>
+            <h2 className="section-title">Featured Creators</h2>
+            <div className="grid">
+              {creators.map((c) => (
+                <Card key={c.id} creator={c} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   )
 }
